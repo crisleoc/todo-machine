@@ -1,16 +1,19 @@
 import React from 'react';
 import searchIcon from '../assets/search.png';
 import clearInputIcon from '../assets/clear-input.png';
+import { TodoContext } from '../contexts/TodoContext';
 import '../css/TodoSearch.css';
 
-function TodoSearch({
-    searchValue,
-    setSearchValue
-}) {
+function TodoSearch() {
+    const { searchValue, setSearchValue } = React.useContext(TodoContext);
+
     return (
         <div className="todoSearch">
             <div className="todoSearch__input-container">
-                <button className="input-container__clear-btn">
+                <button
+                    className="input-container__clear-btn"
+                    onClick={() => setSearchValue('')}
+                >
                     <img src={clearInputIcon} alt="Clear input" />
                 </button>
                 <input

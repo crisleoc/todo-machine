@@ -11,43 +11,40 @@ import { LoadingCounter } from '../components/LoadingCounter';
 import { TodoContext } from '../contexts/TodoContext';
 
 function AppUI() {
-    return (
-        <TodoContext.Consumer>
-            {(
-                {
-                    loading,
-                    error,
-                    searchedTodos,
-                    completeTodo,
-                    deleteTodo,
-                }
-            ) => (
-                <>
-                    <header>
-                        {loading ? <LoadingCounter /> : <TodoCounter />}
-                        <TodoSearch />
-                    </header>
 
-                    <main>
-                        <TodoList>
-                            {loading ? <TodosLoading /> : null}
-                            {error ? <TodosError /> : null}
-                            {(!loading && !searchedTodos.length) ? <EmptyTodos /> : null}
-                            {!loading && !error ? searchedTodos.map(todo => (
-                                <TodoItem
-                                    key={todo.text}
-                                    text={todo.text}
-                                    completed={todo.completed}
-                                    onComplete={() => completeTodo(todo.text)}
-                                    onDelete={() => deleteTodo(todo.text)}
-                                />
-                            )) : null}
-                        </TodoList>
-                    </main>
-                    <CreateTodoButton />
-                </>
-            )}
-        </TodoContext.Consumer>
+    const {
+        loading,
+        error,
+        searchedTodos,
+        completeTodo,
+        deleteTodo,
+    } = React.useContext(TodoContext);
+
+    return (
+        <>
+            <header>
+                {loading ? <LoadingCounter /> : <TodoCounter />}
+                <TodoSearch />
+            </header>
+
+            <main>
+                <TodoList>
+                    {loading ? <TodosLoading /> : null}
+                    {error ? <TodosError /> : null}
+                    {(!loading && !searchedTodos.length) ? <EmptyTodos /> : null}
+                    {!loading && !error ? searchedTodos.map(todo => (
+                        <TodoItem
+                            key={todo.text}
+                            text={todo.text}
+                            completed={todo.completed}
+                            onComplete={() => completeTodo(todo.text)}
+                            onDelete={() => deleteTodo(todo.text)}
+                        />
+                    )) : null}
+                </TodoList>
+            </main>
+            <CreateTodoButton />
+        </>
     )
 }
 

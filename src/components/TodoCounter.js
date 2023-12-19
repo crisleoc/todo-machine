@@ -1,4 +1,6 @@
+import React from 'react';
 import '../css/TodoCounter.css'
+import { TodoContext } from '../contexts/TodoContext';
 
 function CongratulationMsg() {
     return (
@@ -8,12 +10,17 @@ function CongratulationMsg() {
     );
 }
 
-function TodoCounter({ total, completed }) {
+function TodoCounter() {
+    const {
+        completedTodos,
+        totalTodos,
+    } = React.useContext(TodoContext);
+
     return (
         <>
-            {total === completed ? <CongratulationMsg /> :
+            {totalTodos === completedTodos ? <CongratulationMsg /> :
                 <h1 className="TodoCounter">
-                    Has completado <span>{completed}</span> de <span>{total}</span> TODOs
+                    Has completado <span>{completedTodos}</span> de <span>{totalTodos}</span> TODOs
                 </h1>
             }
         </>
