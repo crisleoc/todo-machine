@@ -1,0 +1,48 @@
+.todoItem {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border: 1px solid var(--black);
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.todoItem__text {
+    width: 60%;
+    text-align: left;
+    font-size: 16px;
+}
+
+.todoItem button {
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    padding: 8px;
+    border: 1px solid var(--black);
+    border-radius: 50%;
+}
+
+.todoItem__btn-done:hover {
+    background-color: var(--light-green);
+}
+
+.todoItem__btn-delete:hover {
+    background-color: var(--light-red);
+}
+
+.todoItem__btn-delete:active {
+    background-color: var(--red);
+}
+
+.todoItem--done .todoItem__text {
+    text-decoration: line-through;
+    text-decoration-thickness: 1px;
+}
+
+.todoItem--done .todoItem__btn-done {
+    background-color: var(--green);
+}

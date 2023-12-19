@@ -1,0 +1,30 @@
+.todoItem--skeleton {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    margin: 10px 0;
+    background-color: #fafafa;
+    /* border: 1px solid #d4d4d4; */
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.todoItem--skeleton__text-container {
+    width: 60%;
+    height: 16px;
+    text-align: left;
+    /* background-color: #d4d4d4; */
+    border-radius: 10px;
+}
+
+.todoItem--skeleton__btn-container {
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    padding: 8px;
+    /* background-color: #d4d4d4; */
+    border-radius: 50%;
+}
