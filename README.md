@@ -1,16 +1,29 @@
-# Repositorio base del Curso de Introducción a React.js en Platzi
+# ToDo Machine
 
-¡Hola, Platzinauta!
+## Table Contents
 
-En este repositorio encontrarás el código de todas las clases del [Curso de Introducción a React.js](https://platzi.com/reactjs). Para empezar solo debes clonar este repositorio (`git clone`), instalar sus dependencias (`npm i`) y ejecutar la aplicación (`npm start`).
+- [Overview](#overview)
+- [Available Scripts](#available-scripts)
+  - [`npm start`](#npm-start)
+  - [`npm run build`](#npm-run-build)
+  - [`npm run eject`](#npm-run-eject)
+- [About](#about)
+  - [Author](#author)
+  - [License](#license)
+  - [Acknowledgements 💚](#acknowledgements-)
 
-La rama principal contiene el código con el que eempezamos el curso. En las demás ramas encontrarás el código de las siguientes clases y finalmente el deploy de la aplicación.
 
-¡Mucha suerte aprendiendo React! #NuncaParesDeAprender
+## Overview
 
-## Getting Started with Create React App
+Hello world! 👋
+This is a simple ToDo app that I made to learn React with [@platzi](https://github.com/platzi)'s help. It's a simple app that allows you to add, search, and delete tasks that are saved in the user's local storage. It also allows you to mark tasks as complete and incomplete. The app is styled with CSS vanilla. The app is also responsive and works on mobile devices.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<details>
+    <summary><b>⚡&nbsp;Screenshot</b></summary>
+    <div align="center">
+        <img width="auto" src="https://i.postimg.cc/PxPmXcQw/React-Project.gif">
+    </div>
+</details>
 
 ## Available Scripts
 
@@ -26,7 +39,7 @@ You may also see any lint errors in the console.
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
+Builds the app for production to the `build/` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
 The build is minified and the filenames include the hashes.\
@@ -44,32 +57,14 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+## About
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Author
+- Website - [My Website](https://crisleoc.github.io/)
+- Twitter - [@crisleooc](https://www.twitter.com/crisleooc)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### License
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Acknowledgements 💚
+This project was possible thanks to [@platzi](https://github.com/platzi)'s React course and the teacher, [@juandc](https://github.com/juandc).
