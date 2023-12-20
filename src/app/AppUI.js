@@ -7,8 +7,11 @@ import { CreateTodoButton } from '../components/CreateTodoButton';
 import { TodosLoading } from '../components/TodosLoading';
 import { TodosError } from '../components/TodosError';
 import { EmptyTodos } from '../components/EmptyTodos';
+import { FailSearchTodos } from '../components/FailSearchTodos';
 import { LoadingCounter } from '../components/LoadingCounter';
 import { TodoContext } from '../contexts/TodoContext';
+import { Modal } from '../components/Modal';
+import { TodoForm } from '../components/TodoForm';
 
 function AppUI() {
 
@@ -18,6 +21,8 @@ function AppUI() {
         searchedTodos,
         completeTodo,
         deleteTodo,
+        searchValue,
+        openModal,
     } = React.useContext(TodoContext);
 
     return (
@@ -31,19 +36,29 @@ function AppUI() {
                 <TodoList>
                     {loading ? <TodosLoading /> : null}
                     {error ? <TodosError /> : null}
-                    {(!loading && !searchedTodos.length) ? <EmptyTodos /> : null}
-                    {!loading && !error ? searchedTodos.map(todo => (
+                    {(!loading && !searchedTodos.length && !searchValue) ? <EmptyTodos /> : null}
+                    {(!error && !!searchValue && !searchedTodos.length) ? <FailSearchTodos /> : null}
+                    {(!loading && !error) ? searchedTodos.map(todo => (
                         <TodoItem
-                            key={todo.text}
+                            key={todo.key}
                             text={todo.text}
                             completed={todo.completed}
-                            onComplete={() => completeTodo(todo.text)}
-                            onDelete={() => deleteTodo(todo.text)}
+                            onComplete={() => completeTodo(todo.key)}
+                            onDelete={() => deleteTodo(todo.key)}
                         />
                     )) : null}
                 </TodoList>
             </main>
-            <CreateTodoButton />
+
+            <footer className={openModal ? "modal-open" : ""}>
+                <CreateTodoButton />
+            </footer>
+
+            {openModal && (
+                <Modal>
+                    <TodoForm />
+                </Modal>
+            )}
         </>
     )
 }

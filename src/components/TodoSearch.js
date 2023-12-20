@@ -18,7 +18,7 @@ function TodoSearch() {
                 </button>
                 <input
                     className="input-container__input"
-                    placeholder="Search task"
+                    placeholder="Buscar tareas"
                     value={searchValue}
                     onChange={(event) => {
                         setSearchValue(event.target.value);

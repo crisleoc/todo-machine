@@ -1,0 +1,63 @@
+.TodoForm {
+    width: 100%;
+    max-width: 600px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: var(--main-bg);
+    overflow-x: hidden;
+    text-align: right;
+    font-weight: 500;
+}
+
+.TodoForm-textarea {
+    width: 60%;
+    max-width: 560px;
+    height: 50%;
+    padding: 20px;
+    border: 2px solid var(--main);
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 14px;
+    outline-color: var(--outline-blue);
+    outline-width: 2px;
+    border-radius: 20px;
+    background-color: var(--main-bg)
+}
+
+.TodoForm-buttonContainer {
+    width: 60%;
+    max-width: 560px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.TodoForm-button {
+    padding: 5px 15px;
+    border: 1px solid var(--main);
+    border-radius: 10px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 16px;
+}
+
+.TodoForm-button--add {
+    background-color: var(--green);
+}
+
+.TodoForm-button--add:active {
+    background-color: var(--light-green);
+}
+
+.TodoForm-button--cancel:hover {
+    background-color: var(--red)
+}
+
+.TodoForm-button--cancel:active {
+    background-color: var(--light-red)
+}

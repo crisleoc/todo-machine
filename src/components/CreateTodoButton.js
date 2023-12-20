@@ -1,13 +1,16 @@
+import React from 'react';
 import addIcon from '../assets/add.png';
+import { TodoContext } from '../contexts/TodoContext';
 import '../css/CreateTodoButton.css'
 
 function CreateTodoButton() {
+
+    const { setOpenModal } = React.useContext(TodoContext);
+
     return (
         <button className="createTodoButton"
-            onClick={(event) => {
-                console.log("Click!")
-                console.log(event)
-                console.log(event.target)
+            onClick={() => {
+                setOpenModal(prevState => !prevState);
             }}>
             <img src={addIcon} alt="Add icon" />
         </button>

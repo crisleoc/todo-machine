@@ -1,16 +1,12 @@
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
 :root {
+  --main-bg: #fff;
+  --main: #000;
   --red: #ff5959;
   --green: #5bc35c;
-  --white: #fff;
-  --black: #000;
   --light-green: #abe0ab;
   --light-red: #ff8a8a;
   --yellow: #fcd68a;
+  --outline-blue: #3dc2ff;
 }
 
 * {
@@ -22,7 +18,7 @@ code {
 /* Works on Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: var(--black) transparent;
+  scrollbar-color: var(--main) transparent;
 }
 
 /* Works on Chrome, Edge, and Safari */
@@ -35,7 +31,7 @@ code {
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: var(--black);
+  background-color: var(--main);
   border-radius: 20px;
 }
 
@@ -44,7 +40,8 @@ button {
   outline: none;
   background-color: unset;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  color: var(--main);
+  transition: background-color 0.5s ease, transform 0.5s ease;
 }
 
 input {
@@ -54,7 +51,7 @@ input {
   font-size: 16px;
   font-weight: 500;
   font-family: 'Ubuntu', sans-serif;
-  color: var(--black);
+  color: var(--main);
 }
 
 img {
@@ -63,12 +60,16 @@ img {
 }
 
 body {
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   height: 100vh;
+  color: var(--main);
   font-family: 'Ubuntu', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--main-bg);
 }
 
 #root {
@@ -105,8 +106,38 @@ ul {
   margin: 0;
 }
 
+footer {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  transition: background-color 0.5s;
+}
+
+.modal-open .createTodoButton {
+  transform: rotate(135deg);
+}
+
 .skeleton {
   animation: skeleton-loading 1s linear infinite alternate;
+}
+
+@media (max-height: 650px) {
+
+  main {
+    padding: 0 20px 40px 20px;
+  }
+
+  footer {
+    height: 80px;
+    position: fixed;
+    bottom: 0;
+    background-color: var(--main-bg);
+    z-index: 2;
+  }
+
+  .modal-open {
+    background-color: unset;
+  }
 }
 
 @keyframes skeleton-loading {
